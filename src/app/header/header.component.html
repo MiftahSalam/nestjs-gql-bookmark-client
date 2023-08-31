@@ -1,0 +1,18 @@
+<mat-toolbar class="header">
+    <a [routerLink]="['/']">
+        <h1>Booker</h1>
+    </a>
+    <ul class="nav">
+        <li>
+            <div *ngIf="isLoggedIn$ | async;else login">
+                <a (click)="onLogout()">Logout</a>
+            </div>
+            <ng-template #login>
+                <a [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a>
+            </ng-template>
+        </li>
+        <li *ngIf="(isLoggedIn$ | async) !== true">
+            <a [routerLink]="['/signup']" routerLinkActive="router-link-active" >Sign Up</a>
+        </li>
+    </ul>
+</mat-toolbar>

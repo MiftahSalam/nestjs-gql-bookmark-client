@@ -1,0 +1,2 @@
+schema: http://localhost:3456/graphql
+documents: "./src/**/*.graphql"
